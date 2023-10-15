@@ -6,7 +6,7 @@ function truncateToDecimalPlace(num, decimalPlaces) {
   const multiplier = Math.pow(10, decimalPlaces);
   return Math.trunc(num * multiplier) / multiplier;
 }
-
+//console.log(truncateToDecimalPlace(5.678, 1)); function works correct
 router.get("/calculate/:userId", async (req, res) => {
   const userId = req.params.userId;
   try {
@@ -49,10 +49,11 @@ router.get("/calculate/:userId", async (req, res) => {
       bestDifferentials.reduce((a, b) => a + b, 0) / bestDifferentials.length;
 
     // Calculate and send the handicap index
-    const handicapIndex = Math.max(0, avgDifferential * 0.96); //math.max(0) sets a users handicap to 0 if it calculates to negative
+    //const handicapIndex = Math.max(0, avgDifferential * 0.96); //math.max(0) sets a users handicap to 0 if it calculates to negative
 
-    //res.json({ handicap: handicapIndex.toFixed(1) });
-    res.json({ handicap: truncateToDecimalPlace(handicapIndex, 1) });
+    const handicapIndex = Math.min(54, Math.max(0, avgDifferential * 0.96)); //max of 54 handicap
+
+    res.send({ handicap: truncateToDecimalPlace(handicapIndex, 1) });
   } catch (err) {
     console.error(err);
     res.status(500).json({ error: "Internal server error" });
