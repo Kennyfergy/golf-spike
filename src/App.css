@@ -5,13 +5,17 @@ body {
   text-align: center;
 }
 
+.card {
+  /* Your existing CSS for card, possibly width, padding, border, etc. */
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
+  justify-content: space-around;
+  flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
   font-size: calc(10px + 2vmin);
   color: rgb(165, 128, 128);
 }
@@ -19,8 +23,16 @@ body {
 .card {
   background: #583939;
   border-radius: 8px;
+  border: 1px solid #ccc;
   padding: 20px;
   margin: 20px;
   width: 300px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+.cards-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }

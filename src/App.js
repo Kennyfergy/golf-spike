@@ -21,9 +21,19 @@ function App() {
         <h1>Golf Spike</h1>
         <button onClick={() => setSidebarOpen(true)}>Open Sidebar</button>{" "}
         {/* Button to open sidebar */}
-        <div className="card">
-          <h2>User Handicap Index</h2>
-          <h3>{handicapIndex}</h3>
+        <div className="cards-container">
+          <div className="card">
+            <h2>User Handicap Index</h2>
+            <h3>{handicapIndex}</h3>
+          </div>
+          <div className="card">
+            <h2>Rounds played</h2>
+            <h3>0</h3>
+          </div>
+          <div className="card">
+            <h2>Number of Courses Played</h2>
+            <h3>0</h3>
+          </div>
         </div>
       </header>
       <Sidebar open={sidebarOpen} onClose={() => setSidebarOpen(false)} />{" "}
