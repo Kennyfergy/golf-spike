@@ -11,7 +11,8 @@ function App() {
       .get(`/api/handicap/calculate/${userId}`)
 
       .then((response) => {
-        setHandicap(response.data.handicap);
+        setHandicap(response.data.user_handicap);
+        console.log(response.data);
       })
       .catch((error) => {
         console.error("Error fetching data: ", error);
