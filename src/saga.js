@@ -16,8 +16,17 @@ function* fetchHandicapSaga(action) {
   }
 }
 
+// function* fetchTotalRounds(action) {
+//   try {
+//     const response = yield call(fetch, `api/`);
+//   } catch (error) {
+//     console.log(error);
+//   }
+// }
+
 function* rootSaga() {
   yield takeLatest("FETCH_HANDICAP_REQUEST", fetchHandicapSaga);
+  // yield takeLatest("FETCH_TOTAL_ROUNDS", fetchTotalRounds);
 }
 
 export default rootSaga;
